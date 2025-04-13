@@ -1,1 +1,1 @@
-Calculator project for TOP.
+Calculator project for TOP. Developed 13.04.2025.
