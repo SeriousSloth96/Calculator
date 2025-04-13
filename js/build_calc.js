@@ -4,7 +4,7 @@ const calc_button_objs = [
 [{repr:"7",func:"digit"}, {repr:"8",func:"digit"}, {repr:"9",func:"digit"}, {repr:"+",func:"operation"}],
 [{repr:"4",func:"digit"}, {repr:"5",func:"digit"}, {repr:"6",func:"digit"}, {repr:"-",func:"operation"}],
 [{repr:"1",func:"digit"}, {repr:"2",func:"digit"}, {repr:"3",func:"digit"}, {repr:"/",func:"operation"}],
-[{repr:"0",func:"digit"}, {repr:".",func:"digit"}, {repr:"=",func:"calculate"}, {repr:"*",func:"operation"}]
+[{repr:"0",func:"digit"}, {repr:".",func:"digit"}, {repr:"=",func:"operate"}, {repr:"*",func:"operation"}]
 ]
 
 let row_idx = 0
