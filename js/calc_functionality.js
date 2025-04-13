@@ -29,21 +29,22 @@ const operation = (o) => {
     if (last_entry_is_operator()){
         full_display_string = full_display_string.slice(0,-1)
         full_display_string += o
+    }else if (full_display_string.length > 0){
+        full_display_string += o
     }else if (display_includes_operator()){
         if(operate()){
             full_display_string += o
         }
-    }else{
-        full_display_string += o
     }
     display()
 }
 
 const operate = () => {
-    const regex = /([\d.]+|[/*+-])/ig
+    const regex = /((^-[\d.]+)|[\d.]+|[/*+-])/gi
     const [first, operator, second] = full_display_string.match(regex)
     const first_converted = Number(first)
     const second_converted = Number(second)
+    console.log(first, operator, second)
     if (!isNaN(first_converted) && !isNaN(second_converted) && OPERATORS.includes(operator)){
         let result_string = ""
         switch (operator){
@@ -78,6 +79,7 @@ const clear_display = () => {
 
 const delete_character = () => {
     full_display_string = full_display_string.slice(0,-1)
+    if (full_display_string === "-") full_display_string = ""
     display()
 }
 
@@ -97,7 +99,7 @@ const last_entry_is_operator = () => {
 }
 
 const display_includes_operator = () => {
-    for (const el of full_display_string){
+    for (const el of full_display_string.substring(1)){
         if (OPERATORS.includes(el)) return true
     }
     return false
